@@ -13,7 +13,7 @@
 ## База данных
 
 #### cars
-| id | model  | releaseYear | brandId | colorId | countryId |
+| id | model  | release_year | brand_id | color_id | country_id |
 |----|--------|-------------|---------|---------|-----------|
 | 1  | 320d   | 2016        | 1       | 1       | 1         |
 | 2  | 200AWD | 2017        | 2       | 2       | 1         |
