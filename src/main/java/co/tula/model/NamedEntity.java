@@ -11,7 +11,7 @@ public class NamedEntity {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -27,7 +27,7 @@ public class NamedEntity {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

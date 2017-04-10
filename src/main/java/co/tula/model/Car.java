@@ -3,13 +3,13 @@ package co.tula.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cars")
+@Table(name = "car")
 public class Car {
 
     public Car() {
     }
 
-    public Car(String model, int releaseYear, Brand brand, Color color, Country country) {
+    public Car(String model, Integer releaseYear, Brand brand, Color color, Country country) {
         this.model = model;
         this.releaseYear = releaseYear;
         this.brand = brand;
@@ -20,31 +20,31 @@ public class Car {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "model")
     private String model;
 
-    @Column(name = "releaseYear")
-    private int releaseYear;
+    @Column(name = "release_year")
+    private Integer releaseYear;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "brandId", nullable = false)
+    @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "colorId", nullable = false)
+    @JoinColumn(name = "color_id", nullable = false)
     private Color color;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "countryId", nullable = false)
+    @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -56,11 +56,11 @@ public class Car {
         this.model = model;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 

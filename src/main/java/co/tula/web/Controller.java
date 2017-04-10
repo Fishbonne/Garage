@@ -19,7 +19,7 @@ public class Controller {
     @Autowired
     private Dao dao;
 
-    @PostMapping(value = "/car", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/cars", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity addCar(@RequestParam(value = "model") String model,
                                  @RequestParam(value = "releaseYear") int releaseYear,
                                  @RequestParam(value = "brandId") int brandId,
@@ -27,7 +27,7 @@ public class Controller {
                                  @RequestParam(value = "countryId") int countryId) {
         Car created = dao.save(new CarDto(model, releaseYear, brandId, colorId, countryId));
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/car/{id}")
+                .path("/cars/{id}")
                 .buildAndExpand(created.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).build();
     }
@@ -37,7 +37,7 @@ public class Controller {
         return dao.getCars();
     }
 
-    @PutMapping(value = "/car/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PutMapping(value = "/cars/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity updateCar(@PathVariable(value = "id") int carId,
                                     @RequestParam(value = "model") String model,
                                     @RequestParam(value = "releaseYear") int releaseYear,
@@ -49,13 +49,13 @@ public class Controller {
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping(value = "/car/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @DeleteMapping(value = "/cars/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity removeCar(@PathVariable(value = "id") int id) {
         dao.removeCar(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
-    @GetMapping(value = "/car/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/cars/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Car getCar(@PathVariable(value = "id") int carId) {
         return dao.getCar(carId);
     }

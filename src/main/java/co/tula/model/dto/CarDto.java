@@ -4,12 +4,12 @@ package co.tula.model.dto;
 public class CarDto {
 
     private String model;
-    private int releaseYear;
-    private int brandId;
-    private int colorId;
-    private int countryId;
+    private Integer releaseYear;
+    private Integer brandId;
+    private Integer colorId;
+    private Integer countryId;
 
-    public CarDto(String model, int releaseYear, int brandId, int colorId, int countryId) {
+    public CarDto(String model, Integer releaseYear, Integer brandId, Integer colorId, Integer countryId) {
         this.model = model;
         this.releaseYear = releaseYear;
         this.brandId = brandId;
@@ -25,35 +25,35 @@ public class CarDto {
         this.model = model;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public int getBrandId() {
+    public Integer getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(int brandId) {
+    public void setBrandId(Integer brandId) {
         this.brandId = brandId;
     }
 
-    public int getColorId() {
+    public Integer getColorId() {
         return colorId;
     }
 
-    public void setColorId(int colorId) {
+    public void setColorId(Integer colorId) {
         this.colorId = colorId;
     }
 
-    public int getCountryId() {
+    public Integer getCountryId() {
         return countryId;
     }
 
-    public void setCountryId(int countryId) {
+    public void setCountryId(Integer countryId) {
         this.countryId = countryId;
     }
 }
